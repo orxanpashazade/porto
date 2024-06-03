@@ -1,0 +1,120 @@
+@use "../variables/variables" as *;
+@use "../mixin/mixin" as *;
+@use "../extend/extend" as *;
+body{
+    background: $upper-header-bg-color;
+    .site-wrap{
+        .main-container{
+            width: 100vw;
+            background-color: $upper-header-bg-color;
+            margin-top: 80px;
+            .main{
+                width: 100vw;
+                background-color: $upper-header-bg-color;
+                .intro{
+                    background-color: $upper-header-bg-color;
+                    width: 100vw;
+                    height: 353.6px;
+                    @include flex($display:flex,$items:center,$direction:column,$gap:24px);
+                    h1{
+                        font-family: $default-font-family;
+                        text-align: center;
+                        font-size: 64px;
+                        color: #F1F1F1;
+                        span{
+                            font-size: 64px;
+                            background: linear-gradient($gradient-color-blue-purple);
+                            background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        };
+                    }
+                    p{
+                        font-family: $default-font-family;
+                        font-size: 24px;
+                        text-align: center;
+                    }
+                    button{
+                        width: 230.79px;
+                        height: 64px;
+                        @extend %button-gradient;
+                        font-size: 18px;
+                        margin-top: 24px;
+                    }
+                    button:hover{
+                        opacity: 0.85;
+                    }
+                }
+                .featured-posts-container{
+                    .featured-posts{
+                        @include flex($display:flex,$direction:column,$gap:30px);
+                        margin-top:90px;
+                        margin-left: 75.6px;
+                        margin-right: 75.6px;
+                        .feature-intro-txt{
+                            width: 100vw;
+                            @include flex($display:flex,$justify:center);
+                            p{
+                                font-size:24px;
+                                color: #F1F1F1;
+                                font-family: $default-font-family;
+                                font-weight: 700;
+                            }
+                        }
+                        .ftr-posts{
+                            .big-post{
+                                width: 788px;
+                                height: 856.95px;
+                                padding: 24px;
+                                box-sizing: border-box;
+                                background-color: $card-bg-color;
+                                border-radius: $card-posts-border-radius;
+                                @include flex($display:flex,$direction:column);
+                                img{
+                                    width: 732px;
+                                    height: 411.75px;
+                                    aspect-ratio:16 / 9;
+                                    border-radius: 8px;
+                                    object-fit: cover;
+                                }
+                                button{
+                                    width: 73.61px;
+                                    height: 28px;
+                                    color: $card-txt-color;
+                                    background-color: #2D1927;
+                                    margin-top: 24px;
+                                    cursor: pointer;
+                                    @extend %button-posts;
+                                }
+                                button:hover{
+                                    background-color:#E10689, 0.8;
+                                }
+                                a{
+                                    font-size: 40px;
+                                    color: $card-txt-color;
+                                    font-family: $default-font-family;
+                                    text-decoration: none;
+                                    font-weight: 700;
+                                    margin-top: 33.20px;
+                                }
+                                p{
+                                    font-family: $default-font-family;
+                                    font-size: 20px;
+                                    color: $card-txt-color;
+                                    line-height: 1.5;
+                                }
+                            }
+                            .mini-posts{
+                                @include flex($display:flex,$direction:column,$gap:20px);
+                                div{
+                                    @extend %min-posts-cards;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    
+    }
+}

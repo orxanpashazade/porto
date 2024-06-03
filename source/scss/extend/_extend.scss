@@ -1,0 +1,32 @@
+@use "../variables/variables" as *;
+@use "../mixin/mixin" as *;
+%grow{
+    @keyframes grow{
+        100%{
+            width: 100%;
+        }
+    }
+} 
+%button-gradient{
+    font-family: $default-font-family;
+    border: solid 0px;
+    background-image:linear-gradient($gradient-color-blue-purple);               
+    color: $lower-header-txt-color;
+    font-weight: 700;
+    border-radius: 99px;
+    border:0px solid;  
+    cursor: pointer;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+}
+%button-posts{
+    border:1px solid #E10689;
+    border-radius: 14px;
+}
+%mini-post-cards{
+    width: 546px;
+    height: 186px;
+    background-color:$card-bg-color;
+    border-radius: $card-posts-border-radius;
+    @include flex($display:flex,$direction:column)
+}

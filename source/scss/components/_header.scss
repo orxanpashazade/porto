@@ -1,0 +1,148 @@
+@use "../variables/variables" as *;
+@use "../mixin/mixin" as *;
+@use "../extend/extend" as *;
+.site-wrap{
+    @include flex($display:flex,$direction:column);
+    min-height: 100vh;
+    overflow: clip;
+    position: relative;
+    .cover-bg{
+        @include flex($display:flex,$justify:center,$items:center);
+        z-index: -1;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0) 100%);
+        height: 150vh;
+        overflow: hidden;
+        .line-web{
+            fill: none;
+            position: absolute;
+            width: 140%;
+            stroke: var(--text-color-dark);
+            opacity: .03;
+        }
+        .flair-one{
+            width: 100vw;
+            aspect-ratio: 31 / 26;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: .3;
+        }
+        .flair-two{
+            width: 100vw;
+            aspect-ratio: 85/73;
+            position: absolute;
+            right: -40vw;
+            top: 0px;
+            opacity: .3;
+        }
+    }
+    .upper-header{
+        width: 100vw;
+        height: 54px;
+        background-color: $upper-header-bg-color;
+        @include flex($display:flex,$justify:space-between,$items:center);
+        padding: 0px 19px;
+        box-sizing: border-box;
+        img{
+            width: 146.55px;
+            height: 20px;
+        }
+        button{
+            background-color: $upper-header-btn-color;
+            width: 93.7px;
+            height: 31px;
+            border: solid 0px;
+            font-size: 14px;
+            box-sizing: border-box;
+            border-radius: $upper-header-btn-radius;
+            box-shadow: $upper-header-btn-shadow;
+            @include flex($display:flex, $justify:center, $items:center);
+            cursor: pointer;
+            p{
+                color:$upper-header-btn-txt-color;
+                width: 93.7px;
+                font-family: $default-font-family;
+            }
+        }
+    }
+    .lower-header-container{
+        background-color: $upper-header-bg-color;
+        width: 100vw;
+        .lower-header{
+            background-color: $upper-header-bg-color;
+            margin:0px 79.6px;
+            @include flex($display:flex,$justify:space-between,$items:center);
+            height: 112px;
+            .lower-header-nav{
+                @include flex($display:flex,$items:center);
+                img{
+                    width:80.89px ;
+                    height:31.99px;
+                }
+                ul{
+                    @include flex($display:flex, $direction:row,$gap:24px);
+                    padding-left: 40px;
+                    li{
+                        list-style-type: none;
+                        font-family: $default-font-family;
+                        font-size: $lower-header-txt-size;
+                        color: $lower-header-txt-color;
+                        cursor: pointer;
+                        transition-duration: 0.25s;
+                        a{
+                            text-decoration: none;
+                            color: $lower-header-txt-color;
+                        }
+                    }
+                    li:hover{
+                        border-bottom:1px solid white; 
+                        animation:grow 1s linear;
+                        animation-fill-mode: forwards;
+                    }
+                    @extend  %grow;
+                }   
+            }
+            .lower-header-signIn{
+                ul{
+                    @include flex($display:flex,$direction:row,$gap:24px,$items:center);
+                    li{
+                        list-style-type: none;
+                        font-family: $default-font-family;
+                        font-size: $lower-header-txt-size;
+                        color: $lower-header-txt-color;
+                        cursor: pointer;
+                        a{
+                            text-decoration: none;
+                            color:$lower-header-txt-color;
+                            i:hover{
+                                color:$lower-header-icon-color;
+                            }
+                        }
+                        button{
+                            @extend %button-gradient;
+                            font-size: $lower-header-txt-size;
+                            width: 196.23px;
+                            height: 48px;
+  
+                        }
+                        button:hover{
+                            opacity: 0.85;
+                        }
+                        i{
+                            font-size: $lower-header-txt-size;
+                            color: $lower-header-txt-color;
+                            cursor: pointer;
+                        }
+                    }
+                
+                }
+            }
+        }
+    }
+  
+}
